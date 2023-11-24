@@ -1,0 +1,2 @@
+exits,input_nodes,output_nodes
+exit1,['model/block3_pool/MaxPool:0'],['Early_Exit_Output']

@@ -1,0 +1,6 @@
+decorator==5.1.1
+lxml==4.9.1
+pydot==1.4.2
+sortedcontainers==2.4.0
+sortedcollections
+solidpy

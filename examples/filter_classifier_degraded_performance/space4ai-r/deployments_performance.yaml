@@ -1,0 +1,40 @@
+System:
+  metric_name: average_f1
+  metric_thr: 0.5
+  sorted_deployments_performance:
+  - base:
+      components:
+      - filter_fcn
+      - classifier
+      dependencies:
+      - - filter_fcn
+        - classifier
+        - 0.6336
+      metric_value: 0.7247
+  - deployment2:
+      components:
+      - filter_cnn
+      - classifier
+      dependencies:
+      - - filter_cnn
+        - classifier
+        - 0.6364
+      metric_value: 0.6432
+  - deployment1:
+      components:
+      - filter_fcn
+      - classifier_tiny
+      dependencies:
+      - - filter_fcn
+        - classifier_tiny
+        - 0.6336
+      metric_value: 0.6065
+  - deployment3:
+      components:
+      - filter_cnn
+      - classifier_tiny
+      dependencies:
+      - - filter_cnn
+        - classifier_tiny
+        - 0.6364
+      metric_value: 0.5369

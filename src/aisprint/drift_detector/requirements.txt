@@ -1,0 +1,5 @@
+numpy==1.23
+alibi-detect
+influxdb_client
+boto3
+PyYAML

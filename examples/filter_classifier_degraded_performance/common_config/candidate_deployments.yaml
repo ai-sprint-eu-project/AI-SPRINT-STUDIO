@@ -1,0 +1,31 @@
+Components:
+  component1:
+    name: filter_fcn 
+    candidateExecutionLayers:
+      - 1
+    Containers:
+      container1:
+        image: 
+        memorySize: 1024
+        computingUnits: 0.9
+        trustedExecution: false
+        networkProtection: false
+        fileSystemProtection: false
+        GPURequirement: false
+        candidateExecutionResources:
+          - VM1
+  component2:
+    name: classifier
+    candidateExecutionLayers:
+      - 2
+    Containers:
+      container1:
+        image:  
+        memorySize: 1024
+        computingUnits: 0.9
+        trustedExecution: false
+        networkProtection: false
+        fileSystemProtection: false
+        GPURequirement: false
+        candidateExecutionResources:
+          - VM2

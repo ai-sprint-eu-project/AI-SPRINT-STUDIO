@@ -1,0 +1,107 @@
+Components:
+  component1:
+    name: blurry-faces-onnx
+    candidateExecutionLayers:
+      - 1
+    Containers:
+      container1:
+        image: 
+        memorySize: 1024
+        computingUnits: 0.9
+        trustedExecution: false
+        networkProtection: false
+        fileSystemProtection: false
+        GPURequirement: false
+        candidateExecutionResources:
+          - VM1
+  component1_partitionX_1:
+    name: blurry-faces-onnx_partitionX_1
+    candidateExecutionLayers:
+      - 1
+    Containers:
+      container1:
+        image: 
+        memorySize: 1024
+        computingUnits: 0.9
+        trustedExecution: false
+        networkProtection: false
+        fileSystemProtection: false
+        GPURequirement: false
+        candidateExecutionResources:
+          - VM1
+  component1_partitionX_2:
+    name: blurry-faces-onnx_partitionX_2
+    candidateExecutionLayers:
+      - 2
+    Containers:
+      container1:
+        image: 
+        memorySize: 1024
+        computingUnits: 0.9
+        trustedExecution: false
+        networkProtection: false
+        fileSystemProtection: false
+        GPURequirement: false
+        candidateExecutionResources:
+          - VM2
+  component2:
+    name: mask-detector-onnx
+    candidateExecutionLayers:
+      - 3
+    Containers:
+      container1:
+        image:  
+        memorySize: 1024
+        computingUnits: 0.9
+        trustedExecution: false
+        networkProtection: false
+        fileSystemProtection: false
+        GPURequirement: false
+        candidateExecutionResources:
+          - VM3
+  component2_partitionX_1:
+    name: mask-detector-onnx_partitionX_1
+    candidateExecutionLayers:
+      - 3
+    Containers:
+      container1:
+        image: 
+        memorySize: 1024
+        computingUnits: 0.9
+        trustedExecution: false
+        networkProtection: false
+        fileSystemProtection: false
+        GPURequirement: false
+        candidateExecutionResources:
+          - VM3
+  component2_partitionX_2:
+    name: mask-detector-onnx_partitionX_2
+    candidateExecutionLayers:
+      - 4
+    Containers:
+      container1:
+        image: 
+        memorySize: 1024
+        computingUnits: 0.9
+        trustedExecution: false
+        networkProtection: false
+        fileSystemProtection: false
+        GPURequirement: false
+        candidateExecutionResources:
+          - AWS-FaaS1
+  component3:
+    name: third_component 
+    candidateExecutionLayers:
+      - 4
+    Containers:
+      container1:
+        image:  
+        memorySize: 1024
+        computingUnits: 0.9
+        trustedExecution: false
+        networkProtection: false
+        fileSystemProtection: false
+        GPURequirement: false
+        candidateExecutionResources:
+          - AWS-FaaS2
+          - AWS-FaaS3

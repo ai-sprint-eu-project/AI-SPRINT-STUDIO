@@ -1,0 +1,4 @@
+System:
+  name: mask_detection_v1 
+  components: ['blurry-faces-onnx', 'mask-detector'] 
+  dependencies: [['blurry-faces-onnx', 'mask-detector', 1]] 

@@ -1,0 +1,60 @@
+{
+    "blurry-faces-onnx": {
+        "blurry-faces-onnx": {
+            "VM1": {
+                "model": "CoreBasedPredictor",
+                "regressor_file": "/Users/hamtasedghani/Downloads/mask_detection_v2/oscarp/phd/deployment_1/C2P1.2@VM2/results/Models/C2P1.2@VM2_model_noSFS/best.pickle"
+            }
+        },
+        "blurry-faces-onnx_partition1_1": {
+            "VM1": {
+                "model": "CoreBasedPredictor",
+                "regressor_file": "/Users/hamtasedghani/Downloads/mask_detection_v2/oscarp/phd/deployment_1/C2P1.1@VM2/results/Models/C2P1.1@VM2_model_noSFS/best.pickle"
+            }
+        },
+        "blurry-faces-onnx_partition1_2": {
+            "VM2": {
+                "model": "CoreBasedPredictor",
+                "regressor_file": "/Users/hamtasedghani/Downloads/mask_detection_v2/oscarp/phd/deployment_1/C2P1.2@VM2/results/Models/C2P1.2@VM2_model_noSFS/best.pickle"
+            }
+        }
+    },
+    "mask-detector-onnx": {
+        "mask-detector-onnx": {
+            "VM3": {
+                "model": "CoreBasedPredictor",
+                "regressor_file": "/Users/hamtasedghani/Downloads/mask_detection_v2/oscarp/phd/deployment_1/C2P1.1@VM2/results/Models/C2P1.1@VM2_model_noSFS/best.pickle"
+            }
+        },
+        "mask-detector-onnx_partition1_1": {
+            "VM3": {
+                "model": "CoreBasedPredictor",
+                "regressor_file": "/Users/hamtasedghani/Downloads/mask_detection_v2/oscarp/phd/deployment_1/C2P1.2@VM2/results/Models/C2P1.2@VM2_model_noSFS/best.pickle"
+            }
+        },
+        "mask-detector-onnx_partition1_2": {
+            "AWS-FaaS1": {
+                "model": "MLLIBfaas",
+                "regressor_file": "/Users/hamtasedghani/Downloads/mask_detection_v2/oscarp/phd/deployment_1/C2P1.1@VM2/results/Models/C2P1.1@VM2_model_noSFS/best.pickle",
+                "demandWarm": 2.5,
+                "demandCold": 4
+            }
+        }
+    },
+    "third_component":{
+        "third_component":{
+          "AWS-FaaS2": {
+                "model": "MLLIBfaas",
+                "regressor_file": "/Users/hamtasedghani/Downloads/mask_detection_v2/oscarp/phd/deployment_1/C2P1.2@VM2/results/Models/C2P1.2@VM2_model_noSFS/best.pickle",
+                "demandWarm": 2.5,
+                "demandCold": 4
+            }, 
+            "AWS-FaaS3": {
+                "model": "MLLIBfaas",
+                "regressor_file": "/Users/hamtasedghani/Downloads/mask_detection_v2/oscarp/phd/deployment_1/C2P1.1@VM2/results/Models/C2P1.1@VM2_model_noSFS/best.pickle",
+                "demandWarm": 2.5,
+                "demandCold": 4
+            } 
+        }
+    }
+}

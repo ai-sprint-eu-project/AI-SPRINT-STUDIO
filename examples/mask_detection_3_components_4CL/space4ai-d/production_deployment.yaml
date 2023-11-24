@@ -1,0 +1,176 @@
+System:
+  Components:
+    component1:
+      name: blurry-faces-onnx
+      Containers:
+        container1:
+          image: null
+          memorySize: 1024
+          computingUnits: 0.9
+          trustedExecution: false
+          networkProtection: false
+          fileSystemProtection: false
+          GPURequirement: false
+          selectedExecutionResource: VM1
+      executionLayer: 1
+    component2_partitionX_1:
+      name: mask-detector-onnx_partitionX_1
+      Containers:
+        container1:
+          image: null
+          memorySize: 1024
+          computingUnits: 0.9
+          trustedExecution: false
+          networkProtection: false
+          fileSystemProtection: false
+          GPURequirement: false
+          selectedExecutionResource: VM2
+      executionLayer: 2
+    component2_partitionX_2:
+      name: mask-detector-onnx_partitionX_2
+      Containers:
+        container1:
+          image: null
+          memorySize: 1024
+          computingUnits: 0.9
+          trustedExecution: false
+          networkProtection: false
+          fileSystemProtection: false
+          GPURequirement: false
+          selectedExecutionResource: VM3
+      executionLayer: 3
+    component3:
+      name: third_component
+      Containers:
+        container1:
+          image: null
+          memorySize: 1024
+          computingUnits: 0.9
+          trustedExecution: false
+          networkProtection: false
+          fileSystemProtection: false
+          GPURequirement: false
+          selectedExecutionResource: AWS-FaaS1
+      executionLayer: 4
+  Resources:
+    name: Mask Detection Application PHD
+    NetworkDomains:
+      ND1:
+        name: Network Domain 1
+        AccessDelay: 2.77e-06
+        Bandwidth: 150000
+        subNetworkDomains: []
+        ComputationalLayers:
+          computationalLayer1:
+            name: Private Cloud Layer
+            number: 1
+            type: Virtual
+            Resources:
+              resource1:
+                name: VM1
+                totalNodes: 1
+                description: t2.large
+                cost: 1.2
+                memorySize: 8192
+                storageSize: 450
+                storageType: SSD
+                operatingSystemDistribution: Ubuntu
+                operatingSystemType: Linux
+                operatingSystemVersion: 20.04
+                operatingSystemImageId: aws://us-east-1/ami-0149b2da6ceec4bb0
+                secureBoot: false
+                measuredBoot: false
+                onSpot: false
+                processors:
+                  processor1:
+                    name: Xeon
+                    type: SkyLake
+                    architecture: amd64
+                    computingUnits: 4
+                    internalMemory: 64
+                    SGXFlag: false
+          computationalLayer2:
+            name: Public Cloud Layer
+            number: 2
+            type: Virtual
+            Resources:
+              resource1:
+                name: VM2
+                totalNodes: 1
+                description: t3.xlarge
+                cost: 1.8
+                memorySize: 16384
+                storageSize: 450
+                storageType: SSD
+                operatingSystemDistribution: Ubuntu
+                operatingSystemType: Linux
+                operatingSystemVersion: 20.04
+                operatingSystemImageId: aws://us-east-1/ami-0149b2da6ceec4bb0
+                secureBoot: false
+                measuredBoot: false
+                onSpot: false
+                processors:
+                  processor1:
+                    name: Xeon
+                    type: SkyLake
+                    architecture: amd64
+                    computingUnits: 4
+                    internalMemory: 64
+                    SGXFlag: false
+      ND2:
+        name: Network Domain 2
+        AccessDelay: 2.77e-06
+        Bandwidth: 150000
+        subNetworkDomains: []
+        ComputationalLayers:
+          computationalLayer3:
+            name: Public Cloud Layer
+            number: 3
+            type: Virtual
+            Resources:
+              resource1:
+                name: VM3
+                totalNodes: 1
+                description: t2.large
+                cost: 1.2
+                memorySize: 8192
+                storageSize: 450
+                storageType: SSD
+                operatingSystemDistribution: Ubuntu
+                operatingSystemType: Linux
+                operatingSystemVersion: 20.04
+                operatingSystemImageId: aws://us-east-1/ami-0149b2da6ceec4bb0
+                secureBoot: false
+                measuredBoot: false
+                onSpot: false
+                processors:
+                  processor1:
+                    name: Xeon
+                    type: SkyLake
+                    architecture: amd64
+                    computingUnits: 4
+                    internalMemory: 64
+                    SGXFlag: false
+          computationalLayer4:
+            name: FaaS Layer
+            number: 4
+            type: NativeCloudFunction
+            Resources:
+              resource1:
+                name: AWS-FaaS1
+                description: FaaS of AWS Lambda
+                architecture: arm64
+                cost: 0.0001561
+                memorySize: 4096
+                storageSize: 0.512
+                region: Milan
+                idleTime: 600
+                transitionCost: 0.02625
+      ND3:
+        name: Network Domain 3
+        AccessDelay: 2.77e-06
+        Bandwidth: 40000
+        subNetworkDomains:
+        - ND1
+        - ND2
+  Feasible: true

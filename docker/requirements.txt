@@ -1,0 +1,12 @@
+numpy
+pandas==1.4.2
+pyyaml==5.3.1
+# onnx==1.11.0
+onnx==1.13.0
+onnxruntime==1.11.1
+skl2onnx==1.11.2
+packaging==21.3
+cookiecutter==2.1.1
+# protobuf==3.20.1
+tqdm==4.64.0
+opencv-python

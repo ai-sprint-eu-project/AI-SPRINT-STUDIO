@@ -1,0 +1,4 @@
+System:
+  name: ai-sprint_mask_detection_app
+  components: ['filter', 'classifier'] 
+  dependencies: [['filter', 'classifier', 1]] 

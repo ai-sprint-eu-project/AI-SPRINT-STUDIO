@@ -1,0 +1,4 @@
+System:
+  name: ai-sprint_mask_detection_app
+  components: ['blurry-faces-onnx', 'mask-detector-onnx', 'third_component'] 
+  dependencies: [['blurry-faces-onnx', 'mask-detector-onnx', 1], ['mask-detector-onnx', 'third_component', 1]] 

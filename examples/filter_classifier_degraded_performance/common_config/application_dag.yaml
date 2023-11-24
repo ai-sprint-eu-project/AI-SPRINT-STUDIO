@@ -1,0 +1,7 @@
+System:
+  name: filter_classifier_app 
+  components: ['filter_fcn', 'classifier'] 
+  alternative_components:
+    filter_fcn: ['filter_cnn']
+    classifier: ['classifier_tiny']
+  dependencies: [['filter_fcn', 'classifier', 0.6336]] 

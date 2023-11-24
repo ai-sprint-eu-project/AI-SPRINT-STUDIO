@@ -1,0 +1,7 @@
+blurry-faces-onnx: 415.0
+mask-detector-onnx: 625.0
+blurry-faces-onnx_partition1_1: 13000.0
+blurry-faces-onnx_partition1_2: 415.0
+mask-detector-onnx_partition1_1: 12600.0
+mask-detector-onnx_partition1_2: 552.0
+third_component: 500.0

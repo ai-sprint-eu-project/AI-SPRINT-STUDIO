@@ -1,0 +1,139 @@
+System:
+  name: Mask Detection Application PHD
+  NetworkDomains:
+    ND1:
+      name: Network Domain 1
+      AccessDelay: 0.00000277
+      Bandwidth: 150000
+      subNetworkDomains: []
+      ComputationalLayers:
+        computationalLayer1:
+          name: Private Cloud Layer
+          number: 1
+          type: Virtual
+          Resources:
+            resource1:
+              name: VM1
+              totalNodes: 5
+              description: t2.large
+              cost: 1.2
+              memorySize: 8192
+              storageSize: 450
+              storageType: SSD
+              operatingSystemDistribution: Ubuntu
+              operatingSystemType: Linux
+              operatingSystemVersion: 20.04
+              operatingSystemImageId: aws://us-east-1/ami-0149b2da6ceec4bb0
+              secureBoot: False
+              measuredBoot: False
+              onSpot: False
+              processors:
+                processor1:
+                  name: Xeon
+                  type: SkyLake
+                  architecture: amd64
+                  computingUnits: 4
+                  internalMemory: 64
+                  SGXFlag: False
+        computationalLayer2:
+          name: Public Cloud Layer
+          number: 2
+          type: Virtual
+          Resources:
+            resource1:
+              name: VM2
+              totalNodes: 5
+              description: t3.xlarge
+              cost: 1.8
+              memorySize: 16384
+              storageSize: 450
+              storageType: SSD
+              operatingSystemDistribution: Ubuntu
+              operatingSystemType: Linux
+              operatingSystemVersion: 20.04
+              operatingSystemImageId: aws://us-east-1/ami-0149b2da6ceec4bb0
+              secureBoot: False
+              measuredBoot: False
+              onSpot: False
+              processors:
+                processor1:
+                  name: Xeon
+                  type: SkyLake
+                  architecture: amd64
+                  computingUnits: 4
+                  internalMemory: 64
+                  SGXFlag: False
+    ND2:
+      name: Network Domain 2
+      AccessDelay: 0.00000277
+      Bandwidth: 150000
+      subNetworkDomains: []
+      ComputationalLayers:
+        computationalLayer3:
+          name: Public Cloud Layer
+          number: 3
+          type: Virtual
+          Resources:
+            resource1:
+              name: VM3
+              totalNodes: 5
+              description: t2.large
+              cost: 1.2
+              memorySize: 8192
+              storageSize: 450
+              storageType: SSD
+              operatingSystemDistribution: Ubuntu
+              operatingSystemType: Linux
+              operatingSystemVersion: 20.04
+              operatingSystemImageId: aws://us-east-1/ami-0149b2da6ceec4bb0
+              secureBoot: False
+              measuredBoot: False
+              onSpot: False
+              processors:
+                processor1:
+                  name: Xeon
+                  type: SkyLake
+                  architecture: amd64
+                  computingUnits: 4
+                  internalMemory: 64
+                  SGXFlag: False
+        computationalLayer4:
+            name: FaaS Layer
+            number: 4
+            type: NativeCloudFunction
+            Resources:
+              resource1:
+                  name: AWS-FaaS1
+                  description: FaaS of AWS Lambda
+                  architecture: arm64
+                  cost: 0.0001561
+                  memorySize: 4096
+                  storageSize: 0.512
+                  region: Milan
+                  idleTime: 600
+                  transitionCost: 0.02625
+              resource2:
+                  name: AWS-FaaS2
+                  description: FaaS of AWS Lambda
+                  architecture: arm64
+                  cost: 0.0001561
+                  memorySize: 8192
+                  storageSize: 0.512
+                  region: Milan
+                  idleTime: 600
+                  transitionCost: 0.02625
+              resource3:
+                  name: AWS-FaaS3
+                  description: FaaS of AWS Lambda
+                  architecture: arm64
+                  cost: 0.0001561
+                  memorySize: 16384
+                  storageSize: 0.512
+                  region: Milan
+                  idleTime: 600
+                  transitionCost: 0.02625
+    ND3:
+      name: Network Domain 3
+      AccessDelay: 0.00000277
+      Bandwidth: 40000
+      subNetworkDomains: ["ND1", "ND2"]
