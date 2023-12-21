@@ -23,7 +23,7 @@ RUN pip install --no-cache-dir -r requirements-oscarp.txt
 COPY . /ai-sprint-design
 
 # clone oscarp
-RUN git clone https://gitlab.polimi.it/ai-sprint/OSCAR-P.git /ai-sprint-design/src/aisprint/oscarpcoordinator && \
+RUN git clone https://github.com/ai-sprint-eu-project/OSCAR-P.git /ai-sprint-design/src/aisprint/oscarpcoordinator && \
     cp -r /ai-sprint-design/src/aisprint/oscarpcoordinator/oscarp/executables /bin/oscarp_executables && \
     cp -r /ai-sprint-design/src/aisprint/oscarpcoordinator/jmeterLoadInjector /jmeterLoadInjector
 
